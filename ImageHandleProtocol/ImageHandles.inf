@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = Handles_sarah
+  FILE_GUID                      = c79e8076-7bba-4f09-b64d-a1011981404c
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ShellCEntryLib
+
+[Sources]
+  ImageHandles.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiBootServicesTableLib
+  ShellCEntryLib
+  ShellLib
+  MemoryAllocationLib
+  BaseLib
+  BaseMemoryLib
+  PrintLib
+  DebugLib
+  HandleParsingLib
+  DevicePathLib
+
+[Protocols]
+  gEfiBlockIoProtocolGuid
