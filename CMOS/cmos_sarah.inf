@@ -1,0 +1,24 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = CmosDump_sarah
+  FILE_GUID                      = 4f8c1eed-3bad-460a-9ba8-2a1b4f6e79ff
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = CmosDumpEntryPoint
+
+[Sources]
+  cmos_sarah.c
+  cmos.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiBootServicesTableLib
+  ShellCEntryLib
+  TimerLib
+
+[Protocols]
+  gEfiCpuIo2ProtocolGuid
