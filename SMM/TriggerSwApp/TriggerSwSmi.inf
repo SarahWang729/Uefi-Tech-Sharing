@@ -1,0 +1,21 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = TriggerSwSmi
+  FILE_GUID                      = dc46ca49-caec-42e7-a4f5-d0a1fcda5407
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]
+  TriggerSwSmi.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  IoLib
+  UefiLib
+  
+[Protocols]
+  gEfiSmmControl2ProtocolGuid

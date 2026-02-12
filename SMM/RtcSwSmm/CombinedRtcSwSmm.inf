@@ -1,0 +1,32 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = CombinedRtcSwSmm
+  FILE_GUID                      = fc8d487d-6722-4dd9-add8-a7aaf8c74dce
+  MODULE_TYPE                    = COMBINED_SMM_DXE
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = CombinedRtcSwSmmEntry
+
+[Sources]
+  CombinedRtcSwSmm.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  KabylakeChipsetPkg/KabylakeChipsetPkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  BaseLib
+  DebugLib
+  IoLib
+  SmmServicesTableLib
+  DevicePathLib
+
+[Protocols]
+  gEfiSmmBase2ProtocolGuid
+  gEfiSmmSwDispatch2ProtocolGuid
+
+[Depex]
+  <SMM_DEPEX>
+    gEfiSmmBase2ProtocolGuid AND
+    gEfiSmmSwDispatch2ProtocolGuid

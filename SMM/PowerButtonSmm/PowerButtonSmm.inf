@@ -1,0 +1,29 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = PowerButtonSmm
+  FILE_GUID                      = ceb21e91-9103-43c0-bc08-a06cbaaa254e
+  MODULE_TYPE                    = DXE_SMM_DRIVER
+  VERSION_STRING                 = 1.0
+  PI_SPECIFICATION_VERSION       = 0x0001000A
+  ENTRY_POINT                    = PowerButtonSmmEntry
+
+[Sources]
+  PowerButtonSmm.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  KabylakeChipsetPkg/KabylakeChipsetPkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  BaseLib
+  DebugLib
+  IoLib
+  SmmServicesTableLib
+
+[Protocols]
+  gEfiSmmPowerButtonDispatch2ProtocolGuid
+
+[Depex]
+  gEfiSmmPowerButtonDispatch2ProtocolGuid
