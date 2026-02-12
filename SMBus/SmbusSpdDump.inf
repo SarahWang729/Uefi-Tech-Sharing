@@ -1,0 +1,23 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = SmbusSpdDump_sarah
+  FILE_GUID                      = dd29156e-2544-452f-acee-b3ab2993783d
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]
+  SmbusSpdDump.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  BaseLib
+  MemoryAllocationLib
+
+[Protocols]
+  gEfiSmbusHcProtocolGuid
